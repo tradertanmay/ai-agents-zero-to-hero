@@ -44,7 +44,7 @@ No framework-first abstractions.
 Clone and run the complete agent loop immediately with Python 3.11+:
 
 ```bash
-git clone https://github.com/your-username/ai-agents-zero-to-hero.git
+git clone https://github.com/tradertanmay/ai-agents-zero-to-hero.git
 cd ai-agents-zero-to-hero
 
 # 1. Compare Chatbot vs Workflow vs Agent
