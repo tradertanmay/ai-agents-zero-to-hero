@@ -65,10 +65,10 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - [x] ReAct, Plan-and-Execute, task decomposition, and reflection
   - [x] Why "more reasoning" does not always yield better agents
   - [x] Dynamic replanning and failure recovery during execution plans
-- [ ] **07 — Context Engineering**
-  - [ ] Context window budget allocation and token economy
-  - [ ] Context pollution, stale tool outputs, and noise reduction
-  - [ ] Dynamic pruning, compression, and structured prompting
+- [x] **07 — Context Engineering**
+  - [x] Context window budget allocation and token economy
+  - [x] Context pollution, stale tool outputs, and noise reduction
+  - [x] Dynamic pruning, compression, and structured prompting
 - [x] **08 — Agent Runtime and Harness**
   - [x] The Harness as the Operating System for the Model
   - [x] Execution budgets, step limits, timeouts, and retries

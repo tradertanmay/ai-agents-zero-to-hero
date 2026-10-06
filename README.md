@@ -268,7 +268,7 @@ flowchart TD
 | **[04-build-your-first-agent](04-build-your-first-agent/README.md)** | Level 2 | Ready | Assembling the first complete agent + 10-case regression scorecard |
 | **[05-state-and-memory](05-state-and-memory/README.md)** | Level 2 | Ready | Working state, SQLite persistent memory & history compaction |
 | **[06-planning-and-reasoning](06-planning-and-reasoning/README.md)** | Level 3 | Ready | ReAct, decomposition, reflection, and limits of reasoning |
-| **[07-context-engineering](07-context-engineering/README.md)** | Level 3 | Coming Soon | Context budgets, compression, and anti-pollution |
+| **[07-context-engineering](07-context-engineering/README.md)** | Level 3 | Ready | Context budgets, compression, and anti-pollution |
 | **[08-agent-runtime-and-harness](08-agent-runtime-and-harness/README.md)** | Level 3 | Ready | Harness as the OS: step limits, budgets, middleware & aborts |
 | **[09-multi-agent-systems](09-multi-agent-systems/README.md)** | Level 3 | Coming Soon | Supervisor-worker, handoffs, and when NOT to use multi-agent |
 | **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Coming Soon | Failure taxonomy, loops, hallucinated tools & mitigations |
