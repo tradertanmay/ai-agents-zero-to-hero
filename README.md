@@ -275,7 +275,7 @@ flowchart TD
 | **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Ready | Advanced trajectory evaluation, multi-dimensional metrics & frozen benchmarks |
 | **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Ready | Capability gating, blast radius, invariants & postconditions |
 | **[13-production-agents](13-production-agents/README.md)** | Level 4 | Ready | Durable queues, worker leases, crash recovery, telemetry & health checks |
-| **[14-coding-agents](14-coding-agents/README.md)** | Level 5 | Coming Soon | Repo navigation, patch generation, and test loops |
+| **[14-coding-agents](14-coding-agents/README.md)** | Level 5 | Ready | Repo search, AST navigation, sandboxed test execution & patch repair loops |
 | **[15-self-improving-agents](15-self-improving-agents/README.md)** | Level 5 | Coming Soon | Dynamic few-shot adaptation, trajectory reflection & safety |
 
 ---
@@ -337,10 +337,24 @@ ai-agents-zero-to-hero/
 │   ├── concepts.md                 # Deep-dive: durable state machine, reconciliation & health
 │   ├── example.py                  # Runnable demo: worker leases, crash recovery & trace waterfalls
 │   └── exercise.md                 # Incident root-cause analysis & graceful SIGTERM drain
-├── 14-coding-agents/               # Module 14: [Coming Soon]
+├── 14-coding-agents/               # Module 14: Repo Search, AST Navigation & Sandboxed Repair
+│   ├── README.md                   # Core guide, 9-stage loop, invariants & scorecard
+│   ├── concepts.md                 # Deep-dive: AST slicing, execution sandboxes & test immutability
+│   ├── example.py                  # Component walkthrough: AST slicing, safety linting & sandboxed repair
+│   ├── exercise.md                 # Call-graph extraction, forbidden-pattern security & modulo repair
+│   └── demo_repo/                  # Deliberately broken mini-repository (calculator & parser bugs)
 ├── 15-self-improving-agents/        # Module 15: [Coming Soon]
 │
 ├── examples/
+│   ├── coding_assistant/           # Applied Coding Agent: Sandboxed Repair & Verification Subsystem
+│   │   ├── repo.py                 # Repository discovery, language detection & tree mapping
+│   │   ├── search.py               # Fast code grep & symbol definition lookup
+│   │   ├── ast_tools.py            # AST symbol extraction & targeted function slicing
+│   │   ├── patch.py                # Unified diffs, targeted replacements & syntax validation
+│   │   ├── sandbox.py              # Isolated tempdir cloning, command execution & repo sync
+│   │   ├── verifier.py             # Test execution, traceback parsing & safety linter
+│   │   ├── agent.py                # Autonomous coding agent loop & verification scorecard
+│   │   └── main.py                 # End-to-end runnable demo on demo_repo
 │   ├── minimal_agent/              # Modular, runnable showcase agent
 │   │   ├── README.md
 │   │   ├── llm.py                  # Pluggable LLM interface (Mock, OpenAI, Anthropic, Gemini, Ollama)

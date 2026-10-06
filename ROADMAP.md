@@ -117,10 +117,10 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 
 *Objective: Deep-dive into sophisticated real-world agent specializations.*
 
-- [ ] **14 — Coding Agents**
-  - [ ] Codebase exploration, file search, and indexing
-  - [ ] Patch generation, test execution, and iterative debugging loops
-  - [ ] Deterministic linting and verification harnesses
+- [x] **14 — Coding Agents**
+  - [x] Codebase exploration, file search, and indexing
+  - [x] Patch generation, test execution, and iterative debugging loops
+  - [x] Deterministic linting and verification harnesses
 
 ---
 
@@ -139,5 +139,5 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 
 - [x] `examples/minimal_agent/`: Fully functional, modular agent with mock/pluggable LLM adapters.
 - [x] `examples/reddit_comment_agent/`: Flagstone Capstone: Human-in-the-Loop Reddit Comment Agent with frozen 20-case eval benchmark (`evals/`).
-- [ ] `examples/coding_assistant/`: Minimal repo-investigation and patch-applying agent.
+- [x] `examples/coding_assistant/`: Minimal repo-investigation and patch-applying agent.
 - [ ] `examples/research_assistant/`: Multi-source search, citation, and synthesis agent.
