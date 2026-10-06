@@ -272,7 +272,7 @@ flowchart TD
 | **[08-agent-runtime-and-harness](08-agent-runtime-and-harness/README.md)** | Level 3 | Ready | Harness as the OS: step limits, budgets, middleware & aborts |
 | **[09-multi-agent-systems](09-multi-agent-systems/README.md)** | Level 3 | Ready | Supervisor-worker, handoffs, and when NOT to use multi-agent |
 | **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Ready | Failure taxonomy, loops, ambiguous writes & reconciliation |
-| **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Coming Soon | Advanced trajectory evaluation, LLM-as-judge & benchmarks |
+| **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Ready | Advanced trajectory evaluation, multi-dimensional metrics & frozen benchmarks |
 | **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Coming Soon | Permission gates, sandboxing, and deterministic verification |
 | **[13-production-agents](13-production-agents/README.md)** | Level 4 | Coming Soon | Tracing, telemetry, distributed state, and rate limits |
 | **[14-coding-agents](14-coding-agents/README.md)** | Level 5 | Coming Soon | Repo navigation, patch generation, and test loops |
@@ -320,34 +320,45 @@ ai-agents-zero-to-hero/
 ├── 07-context-engineering/ # Module 7: Token Budgets & Observation Pruning
 ├── 08-agent-runtime-and-harness/ # Module 8: The Agent Harness / Operating System
 ├── 09-multi-agent-systems/ # Module 9: Supervisor-Worker & Review Loops
-├── 10-agent-failures/ # Module 10: Failure Taxonomy, Ambiguous Writes & Reconciliation
-├── 11-agent-evaluation/ # Module 11: [Coming Soon]
+├── 10-agent-failures/             # Module 10: Failure Taxonomy, Ambiguous Writes & Reconciliation
+├── 11-agent-evaluation/            # Module 11: Advanced Trajectory Evaluation & Benchmarks
+│   ├── README.md                   # Core guide, 5 evaluation levels & commands
+│   ├── concepts.md                 # Comprehensive deep-dive & metric formulas
+│   ├── eval_cases.json             # Frozen 20-case benchmark test suite
+│   ├── example.py                  # Runnable comparative regression benchmark (V1 vs V2)
+│   └── exercise.md                 # Production incident reproduction exercise
 ├── 12-agent-safety-and-verification/ # Module 12: [Coming Soon]
-├── 13-production-agents/ # Module 13: [Coming Soon]
-├── 14-coding-agents/ # Module 14: [Coming Soon]
-├── 15-self-improving-agents/ # Module 15: [Coming Soon]
+├── 13-production-agents/            # Module 13: [Coming Soon]
+├── 14-coding-agents/               # Module 14: [Coming Soon]
+├── 15-self-improving-agents/        # Module 15: [Coming Soon]
 │
 ├── examples/
-│ ├── minimal_agent/ # Modular, runnable showcase agent
-│ │ ├── README.md
-│ │ ├── llm.py # Pluggable LLM interface (Mock, OpenAI, Anthropic, Gemini, Ollama)
-│ │ ├── state.py # State representation & history
-│ │ ├── tools.py # Tool definitions & registry
-│ │ ├── runtime.py # Step controller & budget enforcement
-│ │ ├── agent.py # Pure agent logic
-│ │ └── main.py # Runnable demo script
-│ └── reddit_comment_agent/ # Capstone: Human-in-the-Loop Reddit Comment Agent (Modules 01-09)
-│     ├── README.md # Architecture, module mapping & user guide
-│     ├── mock_reddit.py # Offline simulated Reddit environment
-│     ├── reddit.py # Reddit client interface (Mock + optional PRAW)
-│     ├── state.py # SQLite persistent memory & duplicate prevention
-│     ├── tools.py # Permission-gated tool registry
-│     ├── evaluator.py # 5-criterion quality scorecard
-│     ├── approval.py # Human-in-the-loop review gate & HMAC tokens
-│     ├── runtime.py # OS harness & rate limits
-│     ├── agent.py # Central coordinator (observe, decide, act)
-│     └── main.py # Standalone runnable demo script
-└── tests/ # Unittest verification suite (61 tests)
+│   ├── minimal_agent/              # Modular, runnable showcase agent
+│   │   ├── README.md
+│   │   ├── llm.py                  # Pluggable LLM interface (Mock, OpenAI, Anthropic, Gemini, Ollama)
+│   │   ├── state.py                # State representation & history
+│   │   ├── tools.py                # Tool definitions & registry
+│   │   ├── runtime.py              # Step controller & budget enforcement
+│   │   ├── agent.py                # Pure agent logic
+│   │   └── main.py                 # Runnable demo script
+│   └── reddit_comment_agent/       # Capstone: Human-in-the-Loop Reddit Comment Agent (Modules 01-09)
+│       ├── README.md               # Architecture, module mapping & user guide
+│       ├── mock_reddit.py          # Offline simulated Reddit environment
+│       ├── reddit.py               # Reddit client interface (Mock + optional PRAW)
+│       ├── state.py                # SQLite persistent memory & duplicate prevention
+│       ├── tools.py                # Permission-gated tool registry
+│       ├── evaluator.py            # 5-criterion quality scorecard
+│       ├── approval.py             # Human-in-the-loop review gate & HMAC tokens
+│       ├── runtime.py              # OS harness & rate limits
+│       ├── agent.py                # Central coordinator (observe, decide, act)
+│       ├── main.py                 # Standalone runnable demo script
+│       └── evals/                  # Benchmark evaluation harness (Module 11)
+│           ├── cases.json          # Frozen 20-case test suite
+│           ├── metrics.py          # Multi-dimensional metric calculations
+│           ├── judges.py           # Deterministic, Heuristic & LLM Judges
+│           ├── runner.py           # Benchmark execution harness
+│           └── report.py           # Regression reporting & delta tables
+└── tests/                          # Unittest verification suite (68 tests)
     ├── test_module_01.py
     ├── test_module_02.py
     ├── test_module_03.py
@@ -358,6 +369,7 @@ ai-agents-zero-to-hero/
     ├── test_module_08.py
     ├── test_module_09.py
     ├── test_module_10.py
+    ├── test_module_11.py
     ├── test_minimal_agent.py
     └── test_reddit_comment_agent.py
 ```

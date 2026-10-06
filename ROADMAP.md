@@ -88,12 +88,12 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - [x] Taxonomy of failure modes: transient, permanent, ambiguous, partial, semantic
   - [x] The Core Axiom: A failed API call does not necessarily mean the action failed
   - [x] Ambiguous write timeouts, idempotent reconciliation, rate-limit backoff, and semantic drift checks
-- [ ] **11 — Agent Evaluation**
-  - [ ] *(Note: Evaluation begins early in Module 04 with deterministic 10-case scorecards; Module 11 deepens this into advanced production evaluation infrastructure)*
-  - [ ] Why evaluating final answers alone is insufficient
-  - [ ] Trajectory quality, tool efficiency, step cost, and multi-turn reliability metrics
-  - [ ] Deterministic unit tests, benchmark suites, and LLM-as-a-judge
-  - [ ] Measuring and benchmarking multi-agent systems
+- [x] **11 — Agent Evaluation**
+  - [x] *(Note: Evaluation begins early in Module 04 with deterministic 10-case scorecards; Module 11 deepens this into advanced production evaluation infrastructure)*
+  - [x] Why evaluating final answers alone is insufficient (5-level evaluation framework)
+  - [x] Trajectory quality, tool efficiency, step cost, and multi-turn reliability metrics
+  - [x] Deterministic unit tests, benchmark suites (frozen 20-case suite), and LLM-as-a-judge with human calibration
+  - [x] Measuring and benchmarking multi-agent & single-agent systems with regression deltas
 - [ ] **12 — Agent Safety and Verification**
   - [ ] Permission boundaries, sandboxing, and human-in-the-loop gates
   - [ ] Verifying outcomes vs trusting model assertions
@@ -130,6 +130,6 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 ## Runnable Examples Roadmap
 
 - [x] `examples/minimal_agent/`: Fully functional, modular agent with mock/pluggable LLM adapters.
+- [x] `examples/reddit_comment_agent/`: Flagstone Capstone: Human-in-the-Loop Reddit Comment Agent with frozen 20-case eval benchmark (`evals/`).
 - [ ] `examples/coding_assistant/`: Minimal repo-investigation and patch-applying agent.
 - [ ] `examples/research_assistant/`: Multi-source search, citation, and synthesis agent.
-- [ ] `examples/eval_harness/`: Trajectory evaluation and benchmark suite.
