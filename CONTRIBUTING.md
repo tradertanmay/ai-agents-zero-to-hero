@@ -73,3 +73,15 @@ Before submitting a PR:
 Have a question or a topic you'd like explained?
 - Check [QUESTIONS.md](QUESTIONS.md) to see community topics.
 - Open a GitHub Issue using the **Question / Topic Request** template.
+
+---
+
+## Contributor Agreement and Intellectual Property Grant
+
+**AI Agents: Zero → Hero** is a publicly accessible, source-available educational project published under a proprietary license held by Tanmay Sah.
+
+By submitting a pull request, code patch, documentation, or other contribution to this repository, you explicitly agree to the following terms:
+
+1. **License Grant**: You grant Tanmay Sah a perpetual, irrevocable, worldwide, royalty-free, transferable, and sublicensable license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display your contribution in whole or in part, in any format or medium, as part of this project, derivative educational materials, publications, and related commercial or non-commercial offerings.
+2. **Originality**: You represent and warrant that your contribution is entirely your own original creation, or that you have the full legal right and authorization to submit it under these terms without violating any third-party intellectual property or confidentiality obligations.
+3. **No Expectation of Royalties**: You acknowledge and agree that your contribution is provided voluntarily without expectation of compensation, royalties, or co-ownership of the project or its proprietary materials.

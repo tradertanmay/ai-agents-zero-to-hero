@@ -4,6 +4,8 @@
 
 # AI Agents: Zero → Hero
 
+> **A publicly accessible, source-available educational framework by Tanmay Sah.**
+
 Everyone is talking about AI agents.
 
 But what actually makes something an agent?
@@ -438,4 +440,4 @@ python3 -m unittest discover -s tests -v
 
 Copyright (c) 2026 Tanmay Sah. All rights reserved.
 
-This work is protected under a [Proprietary License](LICENSE). No part of this framework, diagrams, models, code, or related materials may be reproduced, distributed, modified, or used in whole or in part without prior written permission. See [LICENSE](LICENSE) for full terms.
+This work is published under a [Proprietary / Source-Available License](LICENSE). No part of the written curriculum, diagrams, code implementations, exercises, or related expressive materials may be reproduced, distributed, modified, or used for commercial, corporate training, or derivative purposes without prior written permission. See [LICENSE](LICENSE) for full terms.

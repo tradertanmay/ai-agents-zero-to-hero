@@ -1,37 +1,38 @@
 Copyright (c) 2026 Tanmay Sah. All rights reserved.
 
-PROPRIETARY LICENSE
+PROPRIETARY / SOURCE-AVAILABLE LICENSE
 
-No part of this work -- including the framework, diagrams, models, terminology,
-chapter structure, code, or related materials -- may be reproduced, distributed,
-modified, adapted, or used in whole or in part without prior written permission
-from the author.
+This work is a publicly accessible, source-available educational resource.
+No part of this work -- including the written curriculum, diagrams, code implementations,
+exercises, or related expressive materials -- may be reproduced, distributed,
+modified, adapted, or used in whole or in part for commercial, organizational,
+or derivative purposes without prior written permission from the author.
 
 This includes but is not limited to use in:
-- Courses and training programs
-- Consulting engagements
-- Publications and presentations
-- Software and derivative works
-- Organizational materials
+- Commercial courses, workshops, and corporate training programs
+- Consulting engagements, client deliverables, and commercial advisory
+- Commercial publications, books, and conference presentations
+- Proprietary software products, tools, and derivative codebases
+- Internal organizational or company-wide training materials
 
-FRAMEWORK INTELLECTUAL PROPERTY
+INTELLECTUAL PROPERTY NOTICE
 
-The framework presented in this work is the intellectual property of Tanmay Sah.
-It may not be copied, adapted, taught, commercialized, incorporated into derivative
-works, or used in any professional, commercial, or organizational context without
-prior written permission.
+All original written lessons, code implementations, diagrams, and educational
+materials in this repository represent the intellectual property of Tanmay Sah.
+They may not be copied, redistributed, adapted, taught in commercial settings,
+or incorporated into derivative works without prior written authorization.
 
 DISCLAIMER
 
 This work is provided for educational purposes only. The author makes no guarantees
 about the accuracy, completeness, or fitness for purpose of any content herein.
-Production infrastructure decisions should be validated against your specific
-workload, hardware, and organizational constraints.
+Production infrastructure decisions and engineering architectures should be
+validated against your specific workload, hardware, security, and organizational constraints.
 
 The views, techniques, and opinions expressed in this work are solely those of the
 author and do not represent the views of any affiliated organization.
 
-To request permission, open a GitHub Issue at:
+To request permission for commercial, corporate, or institutional use, open a GitHub Issue at:
 https://github.com/tradertanmay/ai-agents-zero-to-hero
 
 or contact via the author's GitHub profile:
