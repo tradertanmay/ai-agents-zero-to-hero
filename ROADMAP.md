@@ -73,10 +73,10 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - [x] The Harness as the Operating System for the Model
   - [x] Execution budgets, step limits, timeouts, and retries
   - [x] Middleware, tool permission gates, and trajectory recording
-- [ ] **09 — Multi-Agent Systems**
-  - [ ] Supervisor-worker, handoffs, debates, and peer coordination
-  - [ ] Shared state vs isolated messaging channels
-  - [ ] When **NOT** to use multiple agents (and why a single agent + tools is often superior)
+- [x] **09 — Multi-Agent Systems**
+  - [x] Supervisor-worker, handoffs, debates, and peer coordination
+  - [x] Shared state vs isolated messaging channels
+  - [x] When **NOT** to use multiple agents (and why a single agent + tools is often superior)
 
 ---
 

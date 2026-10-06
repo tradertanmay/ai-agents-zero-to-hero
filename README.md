@@ -270,7 +270,7 @@ flowchart TD
 | **[06-planning-and-reasoning](06-planning-and-reasoning/README.md)** | Level 3 | Ready | ReAct, decomposition, reflection, and limits of reasoning |
 | **[07-context-engineering](07-context-engineering/README.md)** | Level 3 | Ready | Context budgets, compression, and anti-pollution |
 | **[08-agent-runtime-and-harness](08-agent-runtime-and-harness/README.md)** | Level 3 | Ready | Harness as the OS: step limits, budgets, middleware & aborts |
-| **[09-multi-agent-systems](09-multi-agent-systems/README.md)** | Level 3 | Coming Soon | Supervisor-worker, handoffs, and when NOT to use multi-agent |
+| **[09-multi-agent-systems](09-multi-agent-systems/README.md)** | Level 3 | Ready | Supervisor-worker, handoffs, and when NOT to use multi-agent |
 | **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Coming Soon | Failure taxonomy, loops, hallucinated tools & mitigations |
 | **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Coming Soon | Advanced trajectory evaluation, LLM-as-judge & benchmarks |
 | **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Coming Soon | Permission gates, sandboxing, and deterministic verification |
