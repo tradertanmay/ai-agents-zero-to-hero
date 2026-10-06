@@ -49,10 +49,11 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - [x] Multi-step problem solving with mock and real LLM interfaces
   - [x] Clean architecture in ~140 lines of standard Python
   - [x] **Early Evaluation**: 10-case regression scorecard, structured failure log, and before/after comparison (stopping "vibes-based debugging" before touching memory)
-- [ ] **05 — State and Memory**
-  - [ ] Precise disambiguation: Context vs State vs Memory vs History
-  - [ ] Ephemeral execution state vs persistent long-term storage
-  - [ ] Short-term rolling windows, summarization, and external stores
+- [x] **05 — State and Memory**
+  - [x] Precise disambiguation: Context vs State vs Memory vs History
+  - [x] Ephemeral execution state vs persistent long-term storage
+  - [x] Short-term rolling windows, summarization, and external stores
+  - [x] Working memory scratchpad, SQLite-backed entity persistence, and compaction
 
 ---
 
