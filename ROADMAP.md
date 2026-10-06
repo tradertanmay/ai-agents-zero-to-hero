@@ -135,10 +135,29 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 
 ---
 
+## Applied Agent Systems (Complete Real-World Architectures)
+
+*Objective: Full-stack, end-to-end agent systems applying the concepts taught across Modules 00–15.*
+
+- [x] **A1 — Reddit Comment Agent** (Content Stewardship & Production Recovery)
+  - Full-stack autonomous content steward with SQLite memory, 5-criterion quality scorecard, human-in-the-loop review, and production recovery across crashes.
+  - Implemented in `examples/reddit_comment_agent/` (integrates Modules 01–13).
+- [x] **A2 — Persistent Agent: GitHub Project Steward Agent** (Durable Goals & Controlled Reactivation)
+  - Long-running repository steward operating across days, process restarts, and external events.
+  - Core principle: *"Persistence is not an infinite loop. A persistent agent is a system with durable goals, durable state, and controlled reactivation across time."*
+  - 12-state explicit lifecycle machine, SQLite durable checkpointing, scheduled vs. event-driven wakes, crash reconciliation via idempotency keys, abstention discipline, human approval gates, and tiered memory compaction.
+  - Implemented in `applied-agent-systems/persistent-agent/` and `examples/persistent_agent/`.
+- [ ] **A3 — Research Agent** (Multi-Source Search, Citation & Synthesis) *(Planned)*
+- [ ] **A4 — Browser / Computer-Use Agent** (DOM Exploration, Tool Grounding & Vision Action Loops) *(Planned)*
+- [ ] **A5 — Long-Running Coding Agent** (Multi-File Refactoring, Test-Driven Verification & PR Stewardship) *(Planned)*
+
+---
+
 ## Runnable Examples Roadmap
 
 - [x] `examples/minimal_agent/`: Fully functional, modular agent with mock/pluggable LLM adapters.
 - [x] `examples/reddit_comment_agent/`: Flagstone Capstone: Human-in-the-Loop Reddit Comment Agent with frozen 20-case eval benchmark (`evals/`).
 - [x] `examples/coding_assistant/`: Minimal repo-investigation and patch-applying agent.
 - [x] `examples/self_improving_agent/`: Versioned self-improvement, candidate isolation, multi-dimensional promotion, and rollback.
+- [x] `examples/persistent_agent/`: Applied Capstone A2: Production Persistent GitHub Steward Agent with SQLite checkpointing and crash recovery.
 - [ ] `examples/research_assistant/`: Multi-source search, citation, and synthesis agent.

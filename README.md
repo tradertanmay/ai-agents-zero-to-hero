@@ -282,6 +282,23 @@ flowchart TD
 
 ---
 
+## Applied Agent Systems
+
+Beyond the core foundational curriculum (Modules 00–15), this section showcases full-stack, real-world agent architectures built by composing concepts taught throughout the course.
+
+| System | Focus Area | Status | Key Highlights |
+| :--- | :--- | :--- | :--- |
+| **[A1 — Reddit Comment Agent](examples/reddit_comment_agent/README.md)** | Content Stewardship & Quality | Ready | SQLite state, 5-criterion quality scorecard, human review gate, production recovery (Modules 01–13) |
+| **[A2 — Persistent Agent](applied-agent-systems/persistent-agent/README.md)** | Long-Running GitHub Steward | Ready | 12-state machine, durable goals, scheduled/event wakes, crash reconciliation, abstention & memory compaction |
+| **A3 — Research Agent** | Multi-Source Synthesis | Planned | Query planning, citation graphs, contradiction detection, and fact-checking |
+| **A4 — Browser / Computer-Use Agent** | UI Grounding & Web Automation | Planned | DOM tree parsing, coordinate grounding, multimodal vision loops, and action verification |
+| **A5 — Long-Running Coding Agent** | Multi-File Repository Refactoring | Planned | Multi-file dependency graph, AST refactoring, test suite verification & pull request stewardship |
+
+> **The Core Principle of Persistence**:
+> *"Persistence is not an infinite loop. A persistent agent is a system with durable goals, durable state, and controlled reactivation across time."*
+
+---
+
 ## Zero Dependencies & Framework Independence
 
 We believe you should understand how agents work even if every agent framework disappeared tomorrow.
@@ -352,7 +369,26 @@ ai-agents-zero-to-hero/
 │   ├── exercise.md                 # Eval dataset tamper-proofing, AST scanner & canary rollback
 │   └── evals/                      # Quarantined eval datasets (development, regression, holdout)
 │
+├── applied-agent-systems/          # Complete Applied End-to-End Agent Architectures
+│   └── persistent-agent/           # A2: Persistent GitHub Project Steward Agent
+│       ├── README.md               # Capstone documentation & guide
+│       ├── concepts.md             # In-depth architectural guide & diagrams
+│       ├── example.py              # Standalone, runnable minimal implementation
+│       └── exercise.md             # Reliability & fault-tolerance exercises
+│
 ├── examples/
+│   ├── persistent_agent/           # A2 Subsystem: Production Persistent Steward Agent
+│   │   ├── lifecycle.py            # 12-state machine & transition validation
+│   │   ├── goals.py                # Durable goals & commitments
+│   │   ├── mock_github.py          # GitHub API simulator with idempotency keys
+│   │   ├── memory.py               # Tiered consolidated memory & compaction
+│   │   ├── events.py               # Wake triggers & event bus
+│   │   ├── scheduler.py            # Reactivation scheduler & backoff
+│   │   ├── approval.py             # Human approval gate & stale-action detection
+│   │   ├── state.py                # SQLite persistence, checkpoints & audit trail
+│   │   ├── runtime.py              # Autonomy budget & rate limits
+│   │   ├── agent.py                # PersistentStewardAgent orchestrator
+│   │   └── main.py                 # Multi-day end-to-end runnable simulation
 │   ├── self_improving_agent/       # Capstone: Versioned Self-Improvement & Rollback Subsystem
 │   │   ├── versions.py             # Version registry, promotion statuses & immutable audit trail
 │   │   ├── mutation.py             # 5 adaptation surfaces, risk hierarchy & protected verifier guard
@@ -406,7 +442,7 @@ ai-agents-zero-to-hero/
 │           ├── health.py           # Liveness, readiness & dependency health
 │           ├── recovery.py         # Crash recovery & post-commit reconciliation
 │           └── worker.py           # Worker loop & graceful shutdown
-└── tests/                          # Unittest verification suite (88 tests)
+└── tests/                          # Unittest verification suite (137 tests)
     ├── test_module_01.py
     ├── test_module_02.py
     ├── test_module_03.py
@@ -420,6 +456,9 @@ ai-agents-zero-to-hero/
     ├── test_module_11.py
     ├── test_module_12.py
     ├── test_module_13.py
+    ├── test_module_14.py
+    ├── test_module_15.py
+    ├── test_persistent_agent.py
     ├── test_minimal_agent.py
     └── test_reddit_comment_agent.py
 ```
