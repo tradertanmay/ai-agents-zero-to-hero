@@ -1,6 +1,6 @@
-# Concepts: Assembling the Complete Agent
+# Concepts: Assembling the Complete Agent & Early Evaluation
 
-In this module, we assemble the foundational blocks we've built so far—**State**, **Tool Registry**, **Decision Engine**, and **Control Loop**—into a cohesive, functional agent system that interacts with its environment.
+In this module, we assemble the foundational blocks we've built so far—**State**, **Tool Registry**, **Decision Engine**, and **Control Loop**—into a cohesive, functional agent system, and introduce **Early Evaluation** to measure agent reliability objectively.
 
 ---
 
@@ -114,28 +114,80 @@ class Agent:
 
 ---
 
-## 5. Common Misconceptions
+## 5. Early Evaluation: Stopping "Vibes-Based" Debugging
 
-> No **Misconception**: *"An agent needs a 1,000-line framework to coordinate tools and memory."* 
-> **Reality**: As shown above, the core mechanics of a production-style agent require approximately 50 to 100 lines of standard Python. Frameworks add convenience abstractions, but the core engine is simple.
+A major trap when learning agents is **"vibes-based debugging"**: tweaking prompt instructions or tool descriptions, running a single test in the terminal, seeing it work, and assuming the agent is improved.
 
-> No **Misconception**: *"The agent state is just the chat history."* 
-> **Reality**: Chat history is one component of state. State also contains step counts, token usage, tool permissions, scratchpad variables, and runtime flags.
+In reality, changes to an agent's reasoning policy or tools often cause silent **regressions** on other tasks. Without a test scorecard, you are debugging blind.
+
+### The Anatomy of an Early Regression Scorecard
+
+```mermaid
+flowchart TD
+    subgraph Battery["10-Case Regression Battery"]
+        C1["Happy Path Cases"]
+        C2["Edge Cases (Unknown user, 0 total)"]
+        C3["Input Guardrails (Negative values)"]
+        C4["Resource Limits (Tight step budget)"]
+    end
+
+    subgraph EvaluationLoop["Evaluation Harness"]
+        Runner["Agent Runner"]
+        Logger["Structured Failure Log"]
+        Metrics["Scorecard: Pass Rate %"]
+        
+        Battery --> Runner
+        Runner --> Logger
+        Logger --> Metrics
+    end
+
+    style Battery fill:#e3f2fd,stroke:#1565c0
+    style Runner fill:#fff3e0,stroke:#e65100
+    style Logger fill:#f3e5f5,stroke:#7b1fa2
+    style Metrics fill:#e8f5e9,stroke:#2e7d32
+```
+
+1. **Fixed Regression Battery**: A set of 10 deterministic test cases covering both expected behavior and edge conditions.
+2. **Structured Failure Log**: When a case fails, the harness records:
+   - Case ID & description
+   - Failure category (`INPUT_VALIDATION_FAILURE`, `TOOL_SELECTION_FAILURE`, `TOOL_EXECUTION_FAILURE`, `BUDGET_EXCEEDED`, `UNEXPECTED_ANSWER`)
+   - Step number at failure
+   - Expected outcome vs. actual observation
+3. **Before / After Comparison**: Quantifying improvement (e.g. from 50% pass rate on v1 to 100% on v2) before moving forward.
+
+### Curriculum Progression: Module 04 vs. Module 11
+- **Module 04 (Here)**: Establishes the **habit of evaluation** with a deterministic 10-case battery and failure log for a single agent.
+- **Module 11 (Advanced Evaluation)**: Expands this into **production evaluation infrastructure**: multi-turn LLM-as-a-judge, trajectory grading, token/cost optimization, and continuous integration eval suites for multi-agent systems.
 
 ---
 
-## 6. Failure Modes
+## 6. Common Misconceptions
+
+> **Misconception**: *"An agent needs a 1,000-line framework to coordinate tools and memory."*  
+> **Reality**: As shown above, the core mechanics of a production-style agent require approximately 50 to 100 lines of standard Python. Frameworks add convenience abstractions, but the core engine is simple.
+
+> **Misconception**: *"The agent state is just the chat history."*  
+> **Reality**: Chat history is one component of state. State also contains step counts, token usage, tool permissions, scratchpad variables, and runtime flags.
+
+> **Misconception**: *"If an agent solves my demo query, it is ready for production."*  
+> **Reality**: Single-run testing hides edge-case crashes, tool argument errors, and negative value loops. Always run a regression battery.
+
+---
+
+## 7. Failure Modes
 
 1. **State Mutation Loss**: Failing to pass previous tool observations into the model context in subsequent iterations, causing the agent to repeat the first step forever.
 2. **Untrapped Tool Crashes**: An unhandled exception in a tool terminating the entire process instead of appending an error message to the state for model recovery.
-3. **Hallucinated State**: The model claiming it completed an action without actually requesting the required tool call.
+3. **Tool Selection Ambiguity**: Two tools with overlapping descriptions causing the model to pick unpredictably.
+4. **Input Validation Blindness**: Allowing negative values or nonsensical parameters to reach critical execution tools.
 
 ---
 
-## 7. Where It Appears in Real Systems
+## 8. Where It Appears in Real Systems
 
 | Component | In Our Scratch Implementation | In Industry |
 | :--- | :--- | :--- |
 | **Agent Class** | `Agent` | `AgentExecutor` (LangChain), `Workflow` (Temporal) |
 | **State** | `AgentState` dataclass | `StateGraph` TypedDict (LangGraph), `SessionState` |
-| **Decision Interface** | `LLMInterface.decide()` | `ChatOpenAI.bind_tools()`, `anthropic.messages.create()` |
+| **Decision Interface** | `DecisionEngine.decide()` | `ChatOpenAI.bind_tools()`, `anthropic.messages.create()` |
+| **Scorecard & Eval** | `RegressionScorecard` | Braintrust, LangSmith, DeepEval, SWE-bench |

@@ -47,7 +47,8 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 - [x] **04 — Build Your First Agent**
   - [x] The "Aha!" moment: assembling Agent, Tool, Registry, State, and Loop
   - [x] Multi-step problem solving with mock and real LLM interfaces
-  - [x] Clean architecture in ~120 lines of standard Python
+  - [x] Clean architecture in ~140 lines of standard Python
+  - [x] **Early Evaluation**: 10-case regression scorecard, structured failure log, and before/after comparison (stopping "vibes-based debugging" before touching memory)
 - [ ] **05 — State and Memory**
   - [ ] Precise disambiguation: Context vs State vs Memory vs History
   - [ ] Ephemeral execution state vs persistent long-term storage
@@ -87,9 +88,11 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - [ ] Root causes, symptoms, and mitigations
   - [ ] Defensive patterns and guardrail design
 - [ ] **11 — Agent Evaluation**
-  - [ ] Why evaluating final answers is insufficient
-  - [ ] Trajectory quality, tool efficiency, step cost, and reliability metrics
-  - [ ] Deterministic unit tests, mock environments, and LLM-as-a-judge
+  - [ ] *(Note: Evaluation begins early in Module 04 with deterministic 10-case scorecards; Module 11 deepens this into advanced production evaluation infrastructure)*
+  - [ ] Why evaluating final answers alone is insufficient
+  - [ ] Trajectory quality, tool efficiency, step cost, and multi-turn reliability metrics
+  - [ ] Deterministic unit tests, benchmark suites, and LLM-as-a-judge
+  - [ ] Measuring and benchmarking multi-agent systems
 - [ ] **12 — Agent Safety and Verification**
   - [ ] Permission boundaries, sandboxing, and human-in-the-loop gates
   - [ ] Verifying outcomes vs trusting model assertions

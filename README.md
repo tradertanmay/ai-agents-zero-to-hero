@@ -261,14 +261,14 @@ flowchart TD
 | **[01-what-is-an-agent](01-what-is-an-agent/README.md)** | Level 1 | Ready | LLM vs Chatbot vs Workflow vs Agent; operational taxonomy |
 | **[02-agent-loop](02-agent-loop/README.md)** | Level 1 | Ready | The cyclic Observe-Decide-Act execution loop |
 | **[03-tools-and-function-calling](03-tools-and-function-calling/README.md)** | Level 2 | Ready | Tool lifecycle, schemas, validation & **MCP Deep Dive** |
-| **[04-build-your-first-agent](04-build-your-first-agent/README.md)** | Level 2 | Ready | Assembling the first complete agent in pure Python |
+| **[04-build-your-first-agent](04-build-your-first-agent/README.md)** | Level 2 | Ready | Assembling the first complete agent + 10-case regression scorecard |
 | **[05-state-and-memory](05-state-and-memory/README.md)** | Level 2 | Coming Soon | Context vs State vs History vs Vector Memory |
 | **[06-planning-and-reasoning](06-planning-and-reasoning/README.md)** | Level 3 | Coming Soon | ReAct, decomposition, reflection, and limits of reasoning |
 | **[07-context-engineering](07-context-engineering/README.md)** | Level 3 | Coming Soon | Context budgets, compression, and anti-pollution |
 | **[08-agent-runtime-and-harness](08-agent-runtime-and-harness/README.md)** | Level 3 | Ready | Harness as the OS: step limits, budgets, middleware & aborts |
 | **[09-multi-agent-systems](09-multi-agent-systems/README.md)** | Level 3 | Coming Soon | Supervisor-worker, handoffs, and when NOT to use multi-agent |
 | **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Coming Soon | Failure taxonomy, loops, hallucinated tools & mitigations |
-| **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Coming Soon | Trajectory quality, step efficiency, LLM-as-judge |
+| **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Coming Soon | Advanced trajectory evaluation, LLM-as-judge & benchmarks |
 | **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Coming Soon | Permission gates, sandboxing, and deterministic verification |
 | **[13-production-agents](13-production-agents/README.md)** | Level 4 | Coming Soon | Tracing, telemetry, distributed state, and rate limits |
 | **[14-coding-agents](14-coding-agents/README.md)** | Level 5 | Coming Soon | Repo navigation, patch generation, and test loops |
