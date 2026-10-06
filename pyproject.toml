@@ -8,9 +8,9 @@ version = "0.1.0"
 description = "Learn AI agents from first principles to production systems"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
+license = { text = "Proprietary" }
 authors = [
-    { name = "AI Agents Community" }
+    { name = "Tanmay Sah" }
 ]
 dependencies = []
 

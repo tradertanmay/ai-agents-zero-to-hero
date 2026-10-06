@@ -303,7 +303,7 @@ Once you master the mechanics in this repo, you will understand how modern tools
 ```text
 ai-agents-zero-to-hero/
 ├── README.md # Main course landing page
-├── LICENSE # MIT License
+├── LICENSE # Proprietary License (Tanmay Sah)
 ├── CONTRIBUTING.md # Contribution & pedagogical standard
 ├── ROADMAP.md # Curriculum milestone checklist
 ├── QUESTIONS.md # Community Q&A hub
@@ -436,4 +436,6 @@ python3 -m unittest discover -s tests -v
 
 ## License
 
-This educational repository is open-sourced under the [MIT License](LICENSE).
+Copyright (c) 2026 Tanmay Sah. All rights reserved.
+
+This work is protected under a [Proprietary License](LICENSE). No part of this framework, diagrams, models, code, or related materials may be reproduced, distributed, modified, or used in whole or in part without prior written permission. See [LICENSE](LICENSE) for full terms.

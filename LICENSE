@@ -1,21 +1,38 @@
-MIT License
+Copyright (c) 2026 Tanmay Sah. All rights reserved.
 
-Copyright (c) 2026 AI Agents: Zero to Hero Contributors
+PROPRIETARY LICENSE
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+No part of this work -- including the framework, diagrams, models, terminology,
+chapter structure, code, or related materials -- may be reproduced, distributed,
+modified, adapted, or used in whole or in part without prior written permission
+from the author.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This includes but is not limited to use in:
+- Courses and training programs
+- Consulting engagements
+- Publications and presentations
+- Software and derivative works
+- Organizational materials
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+FRAMEWORK INTELLECTUAL PROPERTY
+
+The framework presented in this work is the intellectual property of Tanmay Sah.
+It may not be copied, adapted, taught, commercialized, incorporated into derivative
+works, or used in any professional, commercial, or organizational context without
+prior written permission.
+
+DISCLAIMER
+
+This work is provided for educational purposes only. The author makes no guarantees
+about the accuracy, completeness, or fitness for purpose of any content herein.
+Production infrastructure decisions should be validated against your specific
+workload, hardware, and organizational constraints.
+
+The views, techniques, and opinions expressed in this work are solely those of the
+author and do not represent the views of any affiliated organization.
+
+To request permission, open a GitHub Issue at:
+https://github.com/tradertanmay/ai-agents-zero-to-hero
+
+or contact via the author's GitHub profile:
+https://github.com/tradertanmay
