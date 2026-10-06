@@ -103,10 +103,13 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - [x] Postcondition verification (remote state re-read, text fidelity, single-copy guarantee)
   - [x] Rollback vs compensation (external side effects are compensatable, not truly reversible)
   - [x] Adversarial safety test suite & Invariant Violation Escape Rate (Target: 0.0%)
-- [ ] **13 — Production Agents**
-  - [ ] Production architecture: tracing, telemetry, rate limiting, and persistence
-  - [ ] Async runtimes, distributed state, and background task resumption
-  - [ ] Cost controls, authentication, and SLA enforcement
+- [x] **13 — Production Agents**
+  - [x] Six production concerns: durable execution, telemetry, background workers, crash recovery, config separation, health probes
+  - [x] Explicit state machine with legal transition validation
+  - [x] Background worker model with SQLite durable queue, exclusive leases, and heartbeats
+  - [x] Crash recovery and post-commit reconciliation (reconciling remote side effects without duplicates)
+  - [x] Three pillars of observability: JSONL logs with correlation IDs, metrics registry, hierarchical traces
+  - [x] Secrets redaction, graceful SIGTERM shutdown, and health checks (/health/live, /health/ready, /health/deps)
 
 ---
 

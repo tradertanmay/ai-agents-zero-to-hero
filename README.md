@@ -274,7 +274,7 @@ flowchart TD
 | **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Ready | Failure taxonomy, loops, ambiguous writes & reconciliation |
 | **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Ready | Advanced trajectory evaluation, multi-dimensional metrics & frozen benchmarks |
 | **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Ready | Capability gating, blast radius, invariants & postconditions |
-| **[13-production-agents](13-production-agents/README.md)** | Level 4 | Coming Soon | Tracing, telemetry, distributed state, and rate limits |
+| **[13-production-agents](13-production-agents/README.md)** | Level 4 | Ready | Durable queues, worker leases, crash recovery, telemetry & health checks |
 | **[14-coding-agents](14-coding-agents/README.md)** | Level 5 | Coming Soon | Repo navigation, patch generation, and test loops |
 | **[15-self-improving-agents](15-self-improving-agents/README.md)** | Level 5 | Coming Soon | Dynamic few-shot adaptation, trajectory reflection & safety |
 
@@ -332,7 +332,11 @@ ai-agents-zero-to-hero/
 │   ├── concepts.md                 # Deep-dive: blast radius formula, 6 invariants & compensation
 │   ├── example.py                  # Runnable adversarial safety suite (40+ attack vectors)
 │   └── exercise.md                 # Edit comment capability & compensation exercise
-├── 13-production-agents/            # Module 13: [Coming Soon]
+├── 13-production-agents/            # Module 13: Durable Queues, Worker Leases & Telemetry
+│   ├── README.md                   # Core guide, 6 production concerns & commands
+│   ├── concepts.md                 # Deep-dive: durable state machine, reconciliation & health
+│   ├── example.py                  # Runnable demo: worker leases, crash recovery & trace waterfalls
+│   └── exercise.md                 # Incident root-cause analysis & graceful SIGTERM drain
 ├── 14-coding-agents/               # Module 14: [Coming Soon]
 ├── 15-self-improving-agents/        # Module 15: [Coming Soon]
 │
@@ -357,13 +361,21 @@ ai-agents-zero-to-hero/
 │       ├── runtime.py              # OS harness & rate limits
 │       ├── agent.py                # Central coordinator (observe, decide, act)
 │       ├── main.py                 # Standalone runnable demo script
-│       └── evals/                  # Benchmark evaluation harness (Module 11)
-│           ├── cases.json          # Frozen 20-case test suite
-│           ├── metrics.py          # Multi-dimensional metric calculations
-│           ├── judges.py           # Deterministic, Heuristic & LLM Judges
-│           ├── runner.py           # Benchmark execution harness
-│           └── report.py           # Regression reporting & delta tables
-└── tests/                          # Unittest verification suite (76 tests)
+│       ├── evals/                  # Benchmark evaluation harness (Module 11)
+│       │   ├── cases.json          # Frozen 20-case test suite
+│       │   ├── metrics.py          # Multi-dimensional metric calculations
+│       │   ├── judges.py           # Deterministic, Heuristic & LLM Judges
+│       │   ├── runner.py           # Benchmark execution harness
+│       │   └── report.py           # Regression reporting & delta tables
+│       └── production/             # Production subsystem (Module 13)
+│           ├── config.py           # Configuration, secrets & redaction
+│           ├── jobs.py             # State machine & transition validation
+│           ├── checkpoints.py      # Durable SQLite queue & worker leases
+│           ├── telemetry.py        # Structured JSONL, metrics & tracer
+│           ├── health.py           # Liveness, readiness & dependency health
+│           ├── recovery.py         # Crash recovery & post-commit reconciliation
+│           └── worker.py           # Worker loop & graceful shutdown
+└── tests/                          # Unittest verification suite (88 tests)
     ├── test_module_01.py
     ├── test_module_02.py
     ├── test_module_03.py
@@ -376,6 +388,7 @@ ai-agents-zero-to-hero/
     ├── test_module_10.py
     ├── test_module_11.py
     ├── test_module_12.py
+    ├── test_module_13.py
     ├── test_minimal_agent.py
     └── test_reddit_comment_agent.py
 ```
