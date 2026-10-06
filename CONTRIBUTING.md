@@ -45,43 +45,32 @@ XX-module-name/
 
 ---
 
-## Testing Guidelines
+## Local Testing and Verification
 
-All code contributions must include tests or verify against existing tests using Python's built-in `unittest` runner:
+Learners can verify the entire test suite locally using Python's built-in `unittest` runner:
 
 ```bash
-python -m unittest discover -s tests -v
+python3 -m unittest discover -s tests -v
 ```
 
-Before submitting a PR:
-1. Ensure all `example.py` files execute independently:
-   ```bash
-   python 01-what-is-an-agent/example.py
-   python 02-agent-loop/example.py
-   python 03-tools-and-function-calling/example.py
-   python 04-build-your-first-agent/example.py
-   python 08-agent-runtime-and-harness/example.py
-   python examples/minimal_agent/main.py
-   ```
-2. Verify all tests pass with zero external dependencies.
-3. Check all markdown links and Mermaid diagrams.
+All example scripts execute independently with zero external dependencies:
+```bash
+python3 01-what-is-an-agent/example.py
+python3 02-agent-loop/example.py
+python3 03-tools-and-function-calling/example.py
+python3 04-build-your-first-agent/example.py
+python3 08-agent-runtime-and-harness/example.py
+python3 examples/minimal_agent/main.py
+```
 
 ---
 
-## Submitting Questions and Ideas
+## Contributions and Feedback
 
-Have a question or a topic you'd like explained?
-- Check [QUESTIONS.md](QUESTIONS.md) to see community topics.
-- Open a GitHub Issue using the **Question / Topic Request** template.
+**AI Agents: Zero → Hero** is a publicly accessible, source-available educational project maintained by Tanmay Sah.
 
----
+Feedback, bug reports, questions, and suggestions are welcome through GitHub Issues.
 
-## Contributor Agreement and Intellectual Property Grant
+At this time, external pull requests containing code, documentation, diagrams, or other project content are not being accepted.
 
-**AI Agents: Zero → Hero** is a publicly accessible, source-available educational project published under a proprietary license held by Tanmay Sah.
-
-By submitting a pull request, code patch, documentation, or other contribution to this repository, you explicitly agree to the following terms:
-
-1. **License Grant**: You grant Tanmay Sah a perpetual, irrevocable, worldwide, royalty-free, transferable, and sublicensable license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display your contribution in whole or in part, in any format or medium, as part of this project, derivative educational materials, publications, and related commercial or non-commercial offerings.
-2. **Originality**: You represent and warrant that your contribution is entirely your own original creation, or that you have the full legal right and authorization to submit it under these terms without violating any third-party intellectual property or confidentiality obligations.
-3. **No Expectation of Royalties**: You acknowledge and agree that your contribution is provided voluntarily without expectation of compensation, royalties, or co-ownership of the project or its proprietary materials.
+If you would like to propose a collaboration or contribution, please open an Issue first.
