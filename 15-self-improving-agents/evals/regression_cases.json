@@ -1,0 +1,92 @@
+[
+  {
+    "id": "reg_01",
+    "name": "addition_operation",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "reg_02",
+    "name": "subtraction_operation",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "reg_03",
+    "name": "multiplication_operation",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "reg_04",
+    "name": "division_operation",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "reg_05",
+    "name": "standard_token_spacing",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "reg_06",
+    "name": "multi_operator_spacing",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "medium"
+  },
+  {
+    "id": "reg_07",
+    "name": "power_operation_bitwise_fix",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": false,
+    "difficulty": "medium"
+  },
+  {
+    "id": "reg_08",
+    "name": "unspaced_operator_tokens",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": false,
+    "difficulty": "medium"
+  },
+  {
+    "id": "reg_09",
+    "name": "division_by_zero_validation",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "medium"
+  },
+  {
+    "id": "reg_10",
+    "name": "invalid_token_rejection",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": false,
+    "difficulty": "hard"
+  }
+]

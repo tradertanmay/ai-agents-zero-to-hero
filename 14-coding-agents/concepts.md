@@ -158,6 +158,8 @@ A coding agent verifies its work through three progressive gates:
 2. **Targeted Test Gate**: Runs the specific test that originally failed to establish immediate proof of fix.
 3. **Full Regression Gate**: Runs the entire test suite across the repository to verify that the patch did not introduce unintended side effects.
 
+> **Verification Principle**: The test/build system is a primary verifier, but passing tests establish only that the patch satisfies the checks represented by the available test suite. Passing a test suite does not prove total correctness against unwritten edge cases or specification gaps.
+
 ---
 
 ## 7. The Coding Agent Scorecard

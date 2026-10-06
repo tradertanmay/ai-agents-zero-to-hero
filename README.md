@@ -276,7 +276,7 @@ flowchart TD
 | **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Ready | Capability gating, blast radius, invariants & postconditions |
 | **[13-production-agents](13-production-agents/README.md)** | Level 4 | Ready | Durable queues, worker leases, crash recovery, telemetry & health checks |
 | **[14-coding-agents](14-coding-agents/README.md)** | Level 5 | Ready | Repo search, AST navigation, sandboxed test execution & patch repair loops |
-| **[15-self-improving-agents](15-self-improving-agents/README.md)** | Level 5 | Coming Soon | Dynamic few-shot adaptation, trajectory reflection & safety |
+| **[15-self-improving-agents](15-self-improving-agents/README.md)** | Level 5 | Ready | The 5 adaptation surfaces, isolated candidate evals, multi-dimensional gates & rollback |
 
 ---
 
@@ -343,9 +343,24 @@ ai-agents-zero-to-hero/
 │   ├── example.py                  # Component walkthrough: AST slicing, safety linting & sandboxed repair
 │   ├── exercise.md                 # Call-graph extraction, forbidden-pattern security & modulo repair
 │   └── demo_repo/                  # Deliberately broken mini-repository (calculator & parser bugs)
-├── 15-self-improving-agents/        # Module 15: [Coming Soon]
+├── 15-self-improving-agents/        # Module 15: Self-Improving Agents & Governance
+│   ├── README.md                   # Core guide, 5 adaptation surfaces, architecture & commands
+│   ├── concepts.md                 # Deep-dive: evaluator isolation, multi-dimensional gates & rollback
+│   ├── example.py                  # Walkthrough: holdout boundary, multi-dimensional evals & rollback
+│   ├── exercise.md                 # Eval dataset tamper-proofing, AST scanner & canary rollback
+│   └── evals/                      # Quarantined eval datasets (development, regression, holdout)
 │
 ├── examples/
+│   ├── self_improving_agent/       # Capstone: Versioned Self-Improvement & Rollback Subsystem
+│   │   ├── versions.py             # Version registry, promotion statuses & immutable audit trail
+│   │   ├── mutation.py             # 5 adaptation surfaces, risk hierarchy & protected verifier guard
+│   │   ├── proposer.py             # Failure log analysis & adaptation proposal (holdout isolated)
+│   │   ├── candidate.py            # Candidate workspace cloning & isolated patch application
+│   │   ├── baseline.py             # Baseline naive agent & candidate AST-localized agent
+│   │   ├── evaluator.py            # Frozen regression & holdout benchmark scoring
+│   │   ├── promotion.py            # Multi-dimensional gate (zero tolerance on unsafe) & human approval
+│   │   ├── rollback.py             # Production rollback manager & ancestor restoration
+│   │   └── main.py                 # Flagship end-to-end runnable demonstration
 │   ├── coding_assistant/           # Applied Coding Agent: Sandboxed Repair & Verification Subsystem
 │   │   ├── repo.py                 # Repository discovery, language detection & tree mapping
 │   │   ├── search.py               # Fast code grep & symbol definition lookup

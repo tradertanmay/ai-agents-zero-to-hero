@@ -128,10 +128,10 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 
 *Objective: Explore autonomous learning, meta-reasoning, and self-evolution.*
 
-- [ ] **15 — Self-Improving Agents**
-  - [ ] Trajectory reflection, failure memory, and dynamic few-shot learning
-  - [ ] Prompt and tool self-adaptation
-  - [ ] Safety risks and drift in autonomous self-modifying systems
+- [x] **15 — Self-Improving Agents**
+  - [x] Trajectory reflection, failure memory, and dynamic few-shot learning
+  - [x] Prompt and tool self-adaptation
+  - [x] Safety risks and drift in autonomous self-modifying systems
 
 ---
 
@@ -140,4 +140,5 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 - [x] `examples/minimal_agent/`: Fully functional, modular agent with mock/pluggable LLM adapters.
 - [x] `examples/reddit_comment_agent/`: Flagstone Capstone: Human-in-the-Loop Reddit Comment Agent with frozen 20-case eval benchmark (`evals/`).
 - [x] `examples/coding_assistant/`: Minimal repo-investigation and patch-applying agent.
+- [x] `examples/self_improving_agent/`: Versioned self-improvement, candidate isolation, multi-dimensional promotion, and rollback.
 - [ ] `examples/research_assistant/`: Multi-source search, citation, and synthesis agent.

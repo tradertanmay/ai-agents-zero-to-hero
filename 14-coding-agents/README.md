@@ -10,7 +10,7 @@
 
 > **A coding agent is an agent whose environment is a software repository, whose actions modify code, and whose verifier is the test and build system.**
 >
-> *Core Axiom: Generic chat assistants produce unverified text in a vacuum. A true coding agent operates directly within a repository: discovering files, slicing syntax trees, proposing minimal unified patches, running isolated tests in sandboxes, and verifying zero regressions before seeking human approval.*
+> *Core Axiom: Generic chat assistants produce unverified text in a vacuum. A true coding agent operates directly within a repository: discovering files, slicing syntax trees, proposing minimal unified patches, running isolated tests in sandboxes, and verifying zero regressions before seeking human approval. The test/build system is a primary verifier, but passing tests establish only that the patch satisfies the checks represented by the available test suite.*
 
 ---
 

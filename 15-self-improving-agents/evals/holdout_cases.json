@@ -1,0 +1,92 @@
+[
+  {
+    "id": "holdout_01",
+    "name": "negative_number_parsing",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": false,
+    "difficulty": "hard"
+  },
+  {
+    "id": "holdout_02",
+    "name": "modulo_operator_calculation",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": false,
+    "difficulty": "medium"
+  },
+  {
+    "id": "holdout_03",
+    "name": "nested_parentheses_expression",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": false,
+    "difficulty": "hard"
+  },
+  {
+    "id": "holdout_04",
+    "name": "floating_point_addition",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "holdout_05",
+    "name": "whitespace_strip_validation",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "holdout_06",
+    "name": "chained_multiplication",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "medium"
+  },
+  {
+    "id": "holdout_07",
+    "name": "unsupported_operator_exception",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "holdout_08",
+    "name": "large_integer_exponentiation",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": false,
+    "difficulty": "medium"
+  },
+  {
+    "id": "holdout_09",
+    "name": "fractional_division_accuracy",
+    "target_module": "calculator",
+    "symbol": "calculate",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "low"
+  },
+  {
+    "id": "holdout_10",
+    "name": "compound_symbol_rejection",
+    "target_module": "parser",
+    "symbol": "parse_tokens",
+    "expected_status": "pass",
+    "baseline_passes": true,
+    "difficulty": "medium"
+  }
+]

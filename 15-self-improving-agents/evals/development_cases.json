@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dev_01",
+    "task": "Fix exponentiation operator bug in calculate",
+    "failure_type": "excessive_context",
+    "failing_trace": "File 'tests/test_calculator.py', line 36, in test_power\nAssertionError: 1.0 != 8.0",
+    "target_file": "calculator.py",
+    "target_symbol": "calculate",
+    "naive_context_chars": 8450,
+    "optimized_context_chars": 1950
+  },
+  {
+    "id": "dev_02",
+    "task": "Fix unspaced operator parsing in parse_tokens",
+    "failure_type": "wrong_context_selection",
+    "failing_trace": "File 'tests/test_parser.py', line 23, in test_tokens_without_spaces\nAssertionError: ['2+3*4'] != ['2', '+', '3', '*', '4']",
+    "target_file": "parser.py",
+    "target_symbol": "parse_tokens",
+    "naive_context_chars": 8100,
+    "optimized_context_chars": 2100
+  },
+  {
+    "id": "dev_03",
+    "task": "Fix division by zero handling in calculate",
+    "failure_type": "excessive_context",
+    "failing_trace": "File 'tests/test_calculator.py', line 31, in test_division_by_zero",
+    "target_file": "calculator.py",
+    "target_symbol": "calculate",
+    "naive_context_chars": 8300,
+    "optimized_context_chars": 2000
+  },
+  {
+    "id": "dev_04",
+    "task": "Fix parentheses tokenization in parse_tokens",
+    "failure_type": "wrong_context_selection",
+    "failing_trace": "File 'tests/test_parser.py', line 24, in test_tokens_without_spaces",
+    "target_file": "parser.py",
+    "target_symbol": "parse_tokens",
+    "naive_context_chars": 7950,
+    "optimized_context_chars": 2200
+  }
+]
