@@ -315,11 +315,11 @@ ai-agents-zero-to-hero/
 ├── 02-agent-loop/ # Module 2: The Observe-Decide-Act loop
 ├── 03-tools-and-function-calling/ # Module 3: Tool schemas, execution lifecycle & MCP
 ├── 04-build-your-first-agent/ # Module 4: Assembling your first complete agent
-├── 05-state-and-memory/ # Module 5: [Coming Soon]
-├── 06-planning-and-reasoning/ # Module 6: [Coming Soon]
-├── 07-context-engineering/ # Module 7: [Coming Soon]
+├── 05-state-and-memory/ # Module 5: Working State, SQLite Memory & Compaction
+├── 06-planning-and-reasoning/ # Module 6: ReAct, Planning & Dynamic Replanning
+├── 07-context-engineering/ # Module 7: Token Budgets & Observation Pruning
 ├── 08-agent-runtime-and-harness/ # Module 8: The Agent Harness / Operating System
-├── 09-multi-agent-systems/ # Module 9: [Coming Soon]
+├── 09-multi-agent-systems/ # Module 9: Supervisor-Worker & Review Loops
 ├── 10-agent-failures/ # Module 10: [Coming Soon]
 ├── 11-agent-evaluation/ # Module 11: [Coming Soon]
 ├── 12-agent-safety-and-verification/ # Module 12: [Coming Soon]
@@ -328,21 +328,37 @@ ai-agents-zero-to-hero/
 ├── 15-self-improving-agents/ # Module 15: [Coming Soon]
 │
 ├── examples/
-│ └── minimal_agent/ # Modular, runnable showcase agent
-│ ├── README.md
-│ ├── llm.py # Pluggable LLM interface (Mock, OpenAI, Anthropic, Gemini, Ollama)
-│ ├── state.py # State representation & history
-│ ├── tools.py # Tool definitions & registry
-│ ├── runtime.py # Step controller & budget enforcement
-│ ├── agent.py # Pure agent logic
-│ └── main.py # Runnable demo script
-└── tests/ # Unittest verification suite
+│ ├── minimal_agent/ # Modular, runnable showcase agent
+│ │ ├── README.md
+│ │ ├── llm.py # Pluggable LLM interface (Mock, OpenAI, Anthropic, Gemini, Ollama)
+│ │ ├── state.py # State representation & history
+│ │ ├── tools.py # Tool definitions & registry
+│ │ ├── runtime.py # Step controller & budget enforcement
+│ │ ├── agent.py # Pure agent logic
+│ │ └── main.py # Runnable demo script
+│ └── reddit_comment_agent/ # Capstone: Human-in-the-Loop Reddit Comment Agent (Modules 01-09)
+│     ├── README.md # Architecture, module mapping & user guide
+│     ├── mock_reddit.py # Offline simulated Reddit environment
+│     ├── reddit.py # Reddit client interface (Mock + optional PRAW)
+│     ├── state.py # SQLite persistent memory & duplicate prevention
+│     ├── tools.py # Permission-gated tool registry
+│     ├── evaluator.py # 5-criterion quality scorecard
+│     ├── approval.py # Human-in-the-loop review gate & HMAC tokens
+│     ├── runtime.py # OS harness & rate limits
+│     ├── agent.py # Central coordinator (observe, decide, act)
+│     └── main.py # Standalone runnable demo script
+└── tests/ # Unittest verification suite (55 tests)
     ├── test_module_01.py
     ├── test_module_02.py
     ├── test_module_03.py
     ├── test_module_04.py
+    ├── test_module_05.py
+    ├── test_module_06.py
+    ├── test_module_07.py
     ├── test_module_08.py
-    └── test_minimal_agent.py
+    ├── test_module_09.py
+    ├── test_minimal_agent.py
+    └── test_reddit_comment_agent.py
 ```
 
 ---
