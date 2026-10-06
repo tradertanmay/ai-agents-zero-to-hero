@@ -94,10 +94,15 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - [x] Trajectory quality, tool efficiency, step cost, and multi-turn reliability metrics
   - [x] Deterministic unit tests, benchmark suites (frozen 20-case suite), and LLM-as-a-judge with human calibration
   - [x] Measuring and benchmarking multi-agent & single-agent systems with regression deltas
-- [ ] **12 — Agent Safety and Verification**
-  - [ ] Permission boundaries, sandboxing, and human-in-the-loop gates
-  - [ ] Verifying outcomes vs trusting model assertions
-  - [ ] Checkpoints, rollbacks, and reversible action patterns
+- [x] **12 — Agent Safety and Verification**
+  - [x] Four layers: Policy, Permission, Verification, Recovery / Compensation
+  - [x] Read vs write capability separation (Principle of Least Privilege)
+  - [x] Precondition verification before side effects (target existence, content drift, token binding)
+  - [x] Blast-radius control (Capability x Scope x Frequency x Duration)
+  - [x] 6 executable safety invariants enforced via deterministic code
+  - [x] Postcondition verification (remote state re-read, text fidelity, single-copy guarantee)
+  - [x] Rollback vs compensation (external side effects are compensatable, not truly reversible)
+  - [x] Adversarial safety test suite & Invariant Violation Escape Rate (Target: 0.0%)
 - [ ] **13 — Production Agents**
   - [ ] Production architecture: tracing, telemetry, rate limiting, and persistence
   - [ ] Async runtimes, distributed state, and background task resumption

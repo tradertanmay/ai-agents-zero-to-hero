@@ -190,7 +190,7 @@ def main() -> None:
     agreement = LLMJudge.calibrate_agreement(human_labels, judge_scores, tolerance=0.2)
     print(f"Human Sample Size          : {len(human_labels)} cases")
     print(f"Judge Agreement Percentage : {agreement * 100:.1f}% (Tolerance: +/-0.2)")
-    print(f"Calibration Verdict        : {'TRUSTWORTHY (>=80% agreement)' if agreement >= 0.8 else 'NEEDS RUBRIC REVISION'}")
+    print(f"Calibration Verdict        : {'HIGH AGREEMENT ON CALIBRATION SET (Sample size too small for general reliability)' if agreement >= 0.8 else 'NEEDS RUBRIC REVISION'}")
     print("=" * 75 + "\n")
 
 

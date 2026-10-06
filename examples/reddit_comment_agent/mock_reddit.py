@@ -183,3 +183,24 @@ class MockRedditEnvironment:
         }
         self.submitted_comments.append(record)
         return record
+
+    def delete_comment(self, post_id: str, comment_id: str) -> dict[str, Any]:
+        """Deletes a comment from a post (used in compensation workflows)."""
+        if post_id not in self.posts:
+            return {"status": "error", "error": f"Post '{post_id}' not found."}
+        p = self.posts[post_id]
+        before_count = len(p.comments)
+        p.comments = [c for c in p.comments if c.comment_id != comment_id]
+        if len(p.comments) == before_count:
+            return {"status": "error", "error": f"Comment '{comment_id}' not found on post '{post_id}'."}
+        return {"status": "success", "post_id": post_id, "comment_id": comment_id, "deleted": True}
+
+    def edit_comment(self, post_id: str, comment_id: str, new_body: str) -> dict[str, Any]:
+        """Updates the body of an existing comment."""
+        if post_id not in self.posts:
+            return {"status": "error", "error": f"Post '{post_id}' not found."}
+        for c in self.posts[post_id].comments:
+            if c.comment_id == comment_id:
+                c.body = new_body
+                return {"status": "success", "post_id": post_id, "comment_id": comment_id, "edited": True}
+        return {"status": "error", "error": f"Comment '{comment_id}' not found on post '{post_id}'."}

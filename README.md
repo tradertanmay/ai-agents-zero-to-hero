@@ -273,7 +273,7 @@ flowchart TD
 | **[09-multi-agent-systems](09-multi-agent-systems/README.md)** | Level 3 | Ready | Supervisor-worker, handoffs, and when NOT to use multi-agent |
 | **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Ready | Failure taxonomy, loops, ambiguous writes & reconciliation |
 | **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Ready | Advanced trajectory evaluation, multi-dimensional metrics & frozen benchmarks |
-| **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Coming Soon | Permission gates, sandboxing, and deterministic verification |
+| **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Ready | Capability gating, blast radius, invariants & postconditions |
 | **[13-production-agents](13-production-agents/README.md)** | Level 4 | Coming Soon | Tracing, telemetry, distributed state, and rate limits |
 | **[14-coding-agents](14-coding-agents/README.md)** | Level 5 | Coming Soon | Repo navigation, patch generation, and test loops |
 | **[15-self-improving-agents](15-self-improving-agents/README.md)** | Level 5 | Coming Soon | Dynamic few-shot adaptation, trajectory reflection & safety |
@@ -327,7 +327,11 @@ ai-agents-zero-to-hero/
 │   ├── eval_cases.json             # Frozen 20-case benchmark test suite
 │   ├── example.py                  # Runnable comparative regression benchmark (V1 vs V2)
 │   └── exercise.md                 # Production incident reproduction exercise
-├── 12-agent-safety-and-verification/ # Module 12: [Coming Soon]
+├── 12-agent-safety-and-verification/ # Module 12: Capability Gating, Blast Radius & Compensation
+│   ├── README.md                   # Core guide, 4 layers, 6 controls & commands
+│   ├── concepts.md                 # Deep-dive: blast radius formula, 6 invariants & compensation
+│   ├── example.py                  # Runnable adversarial safety suite (40+ attack vectors)
+│   └── exercise.md                 # Edit comment capability & compensation exercise
 ├── 13-production-agents/            # Module 13: [Coming Soon]
 ├── 14-coding-agents/               # Module 14: [Coming Soon]
 ├── 15-self-improving-agents/        # Module 15: [Coming Soon]
@@ -349,6 +353,7 @@ ai-agents-zero-to-hero/
 │       ├── tools.py                # Permission-gated tool registry
 │       ├── evaluator.py            # 5-criterion quality scorecard
 │       ├── approval.py             # Human-in-the-loop review gate & HMAC tokens
+│       ├── safety.py               # 4-layer defense, blast limiter, verifiers & compensation
 │       ├── runtime.py              # OS harness & rate limits
 │       ├── agent.py                # Central coordinator (observe, decide, act)
 │       ├── main.py                 # Standalone runnable demo script
@@ -358,7 +363,7 @@ ai-agents-zero-to-hero/
 │           ├── judges.py           # Deterministic, Heuristic & LLM Judges
 │           ├── runner.py           # Benchmark execution harness
 │           └── report.py           # Regression reporting & delta tables
-└── tests/                          # Unittest verification suite (68 tests)
+└── tests/                          # Unittest verification suite (76 tests)
     ├── test_module_01.py
     ├── test_module_02.py
     ├── test_module_03.py
@@ -370,6 +375,7 @@ ai-agents-zero-to-hero/
     ├── test_module_09.py
     ├── test_module_10.py
     ├── test_module_11.py
+    ├── test_module_12.py
     ├── test_minimal_agent.py
     └── test_reddit_comment_agent.py
 ```

@@ -37,6 +37,14 @@ class RedditClient(ABC):
         """Publishes a new comment to a specified post."""
         pass
 
+    def delete_comment(self, post_id: str, comment_id: str) -> dict[str, Any]:
+        """Deletes a comment (compensating action). Default returns error."""
+        return {"status": "error", "error": "delete_comment not implemented on client."}
+
+    def edit_comment(self, post_id: str, comment_id: str, new_body: str) -> dict[str, Any]:
+        """Edits an existing comment. Default returns error."""
+        return {"status": "error", "error": "edit_comment not implemented on client."}
+
 
 class MockRedditClient(RedditClient):
     """Offline deterministic Reddit client powered by MockRedditEnvironment."""
@@ -58,6 +66,12 @@ class MockRedditClient(RedditClient):
 
     def submit_comment(self, post_id: str, body: str) -> dict[str, Any]:
         return self.env.submit_comment(post_id, body)
+
+    def delete_comment(self, post_id: str, comment_id: str) -> dict[str, Any]:
+        return self.env.delete_comment(post_id, comment_id)
+
+    def edit_comment(self, post_id: str, comment_id: str, new_body: str) -> dict[str, Any]:
+        return self.env.edit_comment(post_id, comment_id, new_body)
 
 
 class PRAWRedditClient(RedditClient):

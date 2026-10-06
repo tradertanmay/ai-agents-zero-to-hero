@@ -172,7 +172,7 @@ An LLM judge is not inherently objective. Before trusting an LLM judge, you must
 2. Have the LLM judge score the same 20 outputs.
 3. Compute the **Agreement Percentage**:
    $$\text{Agreement} = \frac{\sum \mathbb{I}(|\text{Human} - \text{Judge}| \le \text{tolerance})}{N}$$
-If agreement is below 80%, refine the judge's scoring rubric before relying on it.
+If agreement is below 80%, refine the judge's scoring rubric before relying on it. Note that high agreement on a small sample (e.g. 10 cases) demonstrates calibration on that specific set, but does not prove broad judge reliability across unseen edge cases. Large, diverse samples and continual re-calibration are required in production.
 
 ---
 
