@@ -10,7 +10,7 @@
 
 ## Categorized Questions Index
 
-Below are questions submitted by learners and addressed across our curriculum modules:
+Below are questions submitted by learners and community discussions, addressed across our curriculum modules:
 
 ### Fundamentals & Taxonomy
 - **Q**: *What people call an agent — but isn't necessarily an agent? (Chatbot vs RAG vs Workflow vs Agent)*
@@ -29,10 +29,18 @@ Below are questions submitted by learners and addressed across our curriculum mo
   - Addressed in [03-tools-and-function-calling](03-tools-and-function-calling/concepts.md).
 - **Q**: *What is the difference between Function Calling and MCP?*
   - Addressed in [03-tools-and-function-calling](03-tools-and-function-calling/concepts.md).
+- **Q**: *How does an agent decide which tool to pick when tool descriptions are vague or overlapping?*
+  - Addressed in [03-tools-and-function-calling](03-tools-and-function-calling/concepts.md).
+- **Q**: *What happens when a tool times out, errors, or returns malformed data? (The Unhappy Path)*
+  - Addressed in [03-tools-and-function-calling](03-tools-and-function-calling/concepts.md) and [08-agent-runtime-and-harness](08-agent-runtime-and-harness/concepts.md).
+- **Q**: *How do you prevent subtly incorrect or stale tool outputs from silently poisoning downstream decisions?*
+  - Addressed in [03-tools-and-function-calling](03-tools-and-function-calling/concepts.md) and [10-agent-failures](10-agent-failures/README.md).
 - **Q**: *How does the runtime handle tools that return large payloads or errors?*
   - Addressed in [03-tools-and-function-calling](03-tools-and-function-calling/concepts.md) and [08-agent-runtime-and-harness](08-agent-runtime-and-harness/README.md).
 
 ### Memory & State
+- **Q**: *What is the boundary between what survives across turns (State/Memory) vs. what gets rebuilt from context each time?*
+  - Planned in [05-state-and-memory](05-state-and-memory/README.md) and [07-context-engineering](07-context-engineering/README.md).
 - **Q**: *When should I use a vector database vs. a relational database for agent memory?*
   - Planned in [05-state-and-memory](05-state-and-memory/README.md).
 - **Q**: *How do we prevent an agent's memory from poisoning its future decisions?*
@@ -47,11 +55,17 @@ Below are questions submitted by learners and addressed across our curriculum mo
 ### Context Engineering
 - **Q**: *How do you keep agent context from filling up during long multi-step workflows?*
   - Planned in [07-context-engineering](07-context-engineering/README.md).
+- **Q**: *How do you summarize and ingest a large codebase or technical spec that the agent didn't write without blowing the context window?*
+  - Planned in [07-context-engineering](07-context-engineering/README.md) and [14-coding-agents](14-coding-agents/README.md).
 
-### Agent Runtime & Harness
+### Agent Runtime, Harness & Guardrails
 - **Q**: *What is the difference between the Model and the Agent Harness?*
   - Addressed in [08-agent-runtime-and-harness](08-agent-runtime-and-harness/README.md).
 - **Q**: *How do step limits and execution budgets protect production systems?*
+  - Addressed in [08-agent-runtime-and-harness](08-agent-runtime-and-harness/concepts.md).
+- **Q**: *How does an agent prevent duplicate actions on crash or retry (idempotency and reconciliation)?*
+  - Addressed in [08-agent-runtime-and-harness](08-agent-runtime-and-harness/concepts.md) and [13-production-agents](13-production-agents/README.md).
+- **Q**: *What are Agent Hooks, and how do they enforce deterministic rules instead of relying on context?*
   - Addressed in [08-agent-runtime-and-harness](08-agent-runtime-and-harness/concepts.md).
 
 ### Multi-Agent Systems
@@ -64,7 +78,11 @@ Below are questions submitted by learners and addressed across our curriculum mo
 - **Q**: *Why do agents get stuck in repetitive action loops, and how do we detect them?*
   - Planned in [10-agent-failures](10-agent-failures/README.md).
 
-### Evaluation
+### Evaluation & Testing
+- **Q**: *Why is "vibes-based" debugging dangerous, and how do we measure an agent with a simple failure scorecard early?*
+  - Addressed in [04-build-your-first-agent](04-build-your-first-agent/README.md) and [11-agent-evaluation](11-agent-evaluation/README.md).
+- **Q**: *Why should evaluation be introduced before multi-agent systems?*
+  - Addressed in [04-build-your-first-agent](04-build-your-first-agent/README.md) and [11-agent-evaluation](11-agent-evaluation/README.md).
 - **Q**: *Why is evaluating the final output not enough for agent benchmarking?*
   - Planned in [11-agent-evaluation](11-agent-evaluation/README.md).
 
