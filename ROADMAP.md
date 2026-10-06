@@ -61,10 +61,10 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 
 *Objective: Master agent orchestration, reasoning strategies, context window hygiene, and runtime harnesses.*
 
-- [ ] **06 — Planning and Reasoning**
-  - [ ] ReAct, Plan-and-Execute, task decomposition, and reflection
-  - [ ] Why "more reasoning" does not always yield better agents
-  - [ ] Failure recovery during execution plans
+- [x] **06 — Planning and Reasoning**
+  - [x] ReAct, Plan-and-Execute, task decomposition, and reflection
+  - [x] Why "more reasoning" does not always yield better agents
+  - [x] Dynamic replanning and failure recovery during execution plans
 - [ ] **07 — Context Engineering**
   - [ ] Context window budget allocation and token economy
   - [ ] Context pollution, stale tool outputs, and noise reduction
