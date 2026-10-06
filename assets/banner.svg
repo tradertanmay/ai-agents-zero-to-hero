@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14243b" />
+      <stop offset="100%" stop-color="#1e3a5f" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="1200" height="360" rx="8" fill="url(#bg)" />
+
+  <!-- Subtle Grid Accent Overlay -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="200" y1="0" x2="200" y2="360" />
+    <line x1="400" y1="0" x2="400" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="800" y1="0" x2="800" y2="360" />
+    <line x1="1000" y1="0" x2="1000" y2="360" />
+  </g>
+
+  <!-- Title -->
+  <text 
+    x="600" 
+    y="160" 
+    text-anchor="middle" 
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+    font-size="64" 
+    font-weight="800" 
+    letter-spacing="-1.5px" 
+    fill="#ffffff">
+    AI Agents: Zero → Hero
+  </text>
+
+  <!-- Accent Underline -->
+  <rect x="440" y="185" width="320" height="6" rx="3" fill="url(#accent)" />
+
+  <!-- Subtitle -->
+  <text 
+    x="600" 
+    y="235" 
+    text-anchor="middle" 
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+    font-size="22" 
+    font-weight="400" 
+    letter-spacing="0.2px" 
+    fill="#cbd5e1">
+    From First Principles to Production-Grade Agent Systems
+  </text>
+
+  <!-- Tagline / Badges Row -->
+  <text 
+    x="600" 
+    y="275" 
+    text-anchor="middle" 
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+    font-size="14" 
+    font-weight="500" 
+    letter-spacing="1.5px" 
+    fill="#94a3b8">
+    PURE PYTHON  •  ZERO MANDATORY DEPENDENCIES  •  OFFLINE-FIRST
+  </text>
+</svg>

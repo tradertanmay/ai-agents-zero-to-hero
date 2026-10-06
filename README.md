@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="AI Agents: Zero to Hero" width="100%">
+</p>
+
 # AI Agents: Zero → Hero
 
 Everyone is talking about AI agents.
