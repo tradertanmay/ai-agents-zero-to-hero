@@ -181,11 +181,12 @@ class RedditToolRegistry:
                 "error": f"DuplicateCommentError: Agent has already commented on post '{post_id}'.",
             }
 
-        # Permission Gate Verification
-        if not self.approval_gate.verify_token(post_id, comment_text, approval_token):
+        # Permission Gate Verification (Cryptographically Enforced Approval Capability)
+        valid, reason = self.approval_gate.verify_and_consume_token(post_id, comment_text, approval_token)
+        if not valid:
             return {
                 "status": "error",
-                "error": "PermissionDeniedError: submit_comment requires a valid approval token from ApprovalGate.",
+                "error": f"PermissionDeniedError: submit_comment requires a valid approval token from ApprovalGate. {reason}",
             }
 
         # Dispatch write to Reddit client

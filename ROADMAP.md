@@ -84,10 +84,10 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 
 *Objective: Build resilient, observable, evaluatable, and safe agentic infrastructure for real-world deployments.*
 
-- [ ] **10 — Agent Failures**
-  - [ ] Taxonomy of failure modes: tool hallucination, loop lock, premature stop, state corruption
-  - [ ] Root causes, symptoms, and mitigations
-  - [ ] Defensive patterns and guardrail design
+- [x] **10 — Agent Failures**
+  - [x] Taxonomy of failure modes: transient, permanent, ambiguous, partial, semantic
+  - [x] The Core Axiom: A failed API call does not necessarily mean the action failed
+  - [x] Ambiguous write timeouts, idempotent reconciliation, rate-limit backoff, and semantic drift checks
 - [ ] **11 — Agent Evaluation**
   - [ ] *(Note: Evaluation begins early in Module 04 with deterministic 10-case scorecards; Module 11 deepens this into advanced production evaluation infrastructure)*
   - [ ] Why evaluating final answers alone is insufficient

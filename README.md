@@ -271,7 +271,7 @@ flowchart TD
 | **[07-context-engineering](07-context-engineering/README.md)** | Level 3 | Ready | Context budgets, compression, and anti-pollution |
 | **[08-agent-runtime-and-harness](08-agent-runtime-and-harness/README.md)** | Level 3 | Ready | Harness as the OS: step limits, budgets, middleware & aborts |
 | **[09-multi-agent-systems](09-multi-agent-systems/README.md)** | Level 3 | Ready | Supervisor-worker, handoffs, and when NOT to use multi-agent |
-| **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Coming Soon | Failure taxonomy, loops, hallucinated tools & mitigations |
+| **[10-agent-failures](10-agent-failures/README.md)** | Level 4 | Ready | Failure taxonomy, loops, ambiguous writes & reconciliation |
 | **[11-agent-evaluation](11-agent-evaluation/README.md)** | Level 4 | Coming Soon | Advanced trajectory evaluation, LLM-as-judge & benchmarks |
 | **[12-agent-safety-and-verification](12-agent-safety-and-verification/README.md)** | Level 4 | Coming Soon | Permission gates, sandboxing, and deterministic verification |
 | **[13-production-agents](13-production-agents/README.md)** | Level 4 | Coming Soon | Tracing, telemetry, distributed state, and rate limits |
@@ -320,7 +320,7 @@ ai-agents-zero-to-hero/
 ├── 07-context-engineering/ # Module 7: Token Budgets & Observation Pruning
 ├── 08-agent-runtime-and-harness/ # Module 8: The Agent Harness / Operating System
 ├── 09-multi-agent-systems/ # Module 9: Supervisor-Worker & Review Loops
-├── 10-agent-failures/ # Module 10: [Coming Soon]
+├── 10-agent-failures/ # Module 10: Failure Taxonomy, Ambiguous Writes & Reconciliation
 ├── 11-agent-evaluation/ # Module 11: [Coming Soon]
 ├── 12-agent-safety-and-verification/ # Module 12: [Coming Soon]
 ├── 13-production-agents/ # Module 13: [Coming Soon]
@@ -347,7 +347,7 @@ ai-agents-zero-to-hero/
 │     ├── runtime.py # OS harness & rate limits
 │     ├── agent.py # Central coordinator (observe, decide, act)
 │     └── main.py # Standalone runnable demo script
-└── tests/ # Unittest verification suite (55 tests)
+└── tests/ # Unittest verification suite (61 tests)
     ├── test_module_01.py
     ├── test_module_02.py
     ├── test_module_03.py
@@ -357,6 +357,7 @@ ai-agents-zero-to-hero/
     ├── test_module_07.py
     ├── test_module_08.py
     ├── test_module_09.py
+    ├── test_module_10.py
     ├── test_minimal_agent.py
     └── test_reddit_comment_agent.py
 ```

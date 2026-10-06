@@ -144,8 +144,25 @@ ACTIONS:
 Select action (1/2/3) [default: 3]:
 ```
 
-### Cryptographic Security Guarantee
-The write tool `submit_comment(post_id, comment_text, approval_token)` requires an unforgeable HMAC signature generated only by `ApprovalGate`. If a model attempts to call `submit_comment` autonomously without human sign-off, the tool immediately aborts with `PermissionDeniedError`.
+### Evaluator Approval != Permission to Act
+
+A critical architectural distinction is established here:
+
+```text
+Evaluator (Quality Gate)
+"Is this draft good enough to show a human?"
+        ↓
+Human Approval
+"Do I authorize this exact action?"
+        ↓
+Runtime
+"Is the authorization capability token valid and unconsumed?"
+        ↓
+submit_comment()
+```
+
+1. **Quality Gate, Not Proof of Accuracy**: The 5-criterion evaluator is an automated heuristic filter, not mathematical proof of factual correctness. A 10/10 score means the draft passed our baseline criteria and is worth human attention; it does not eliminate the need for human discernment or advanced evaluation (covered in Module 11).
+2. **Cryptographically Enforced Approval Capability**: The write tool `submit_comment(post_id, comment_text, approval_token)` requires a signed, short-lived approval token that the agent cannot generate itself. This capability token is cryptographically bound to `post_id`, the SHA-256 hash of the exact approved comment text, an expiration timestamp, and a single-use nonce. If the model modifies the text, replays an old token, or attempts an unauthorized call, the action is rejected with `PermissionDeniedError`.
 
 ---
 

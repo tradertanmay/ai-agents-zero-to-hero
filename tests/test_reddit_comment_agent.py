@@ -97,14 +97,27 @@ class TestRedditCommentAgent(unittest.TestCase):
         gate = ApprovalGate(secret_key="unit_test_key")
         token = gate.generate_token("post_123", "Approved text")
         
-        # Exact match succeeds
-        self.assertTrue(gate.verify_token("post_123", "Approved text", token))
+        # Exact match succeeds on first use
+        valid, msg = gate.verify_and_consume_token("post_123", "Approved text", token)
+        self.assertTrue(valid)
+        self.assertIn("verified", msg.lower())
         
-        # Tampered text fails
-        self.assertFalse(gate.verify_token("post_123", "Tampered text", token))
-        
-        # Wrong post ID fails
-        self.assertFalse(gate.verify_token("post_999", "Approved text", token))
+        # Second use with same token fails (replay prevention)
+        valid_again, msg_again = gate.verify_and_consume_token("post_123", "Approved text", token)
+        self.assertFalse(valid_again)
+        self.assertIn("TokenReplayError", msg_again)
+
+        # Fresh token with tampered text fails
+        token2 = gate.generate_token("post_123", "Original text")
+        valid_tampered, msg_tampered = gate.verify_and_consume_token("post_123", "Tampered text", token2)
+        self.assertFalse(valid_tampered)
+        self.assertIn("TextTamperError", msg_tampered)
+
+        # Fresh token with expired TTL fails
+        token_expired = gate.generate_token("post_123", "Expired text", ttl_seconds=-1.0)
+        valid_expired, msg_expired = gate.verify_and_consume_token("post_123", "Expired text", token_expired)
+        self.assertFalse(valid_expired)
+        self.assertIn("TokenExpiredError", msg_expired)
 
     def test_tool_registry_permission_gate(self):
         tools = RedditToolRegistry(self.client, self.state, self.approval_gate)
