@@ -30,6 +30,8 @@ No framework-first abstractions.
 > **What about AI agents confuses you?**
 >
 > Have a question or a concept you want demystified? Check out [QUESTIONS.md](QUESTIONS.md) or [submit a question via GitHub Issues](../../issues/new?template=question.md). Questions from the community directly shape upcoming modules in this series!
+>
+> Have a question, idea, or want project updates? Join the [GitHub Discussions](../../discussions).
 
 ---
 
