@@ -147,7 +147,9 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
   - Core principle: *"Persistence is not an infinite loop. A persistent agent is a system with durable goals, durable state, and controlled reactivation across time."*
   - 12-state explicit lifecycle machine, SQLite durable checkpointing, scheduled vs. event-driven wakes, crash reconciliation via idempotency keys, abstention discipline, human approval gates, and tiered memory compaction.
   - Implemented in `applied-agent-systems/persistent-agent/` and `examples/persistent_agent/`.
-- [ ] **A3 — Research Agent** (Multi-Source Search, Citation & Synthesis) *(Planned)*
+- [x] **A3 — Research Agent** (Autonomous Multi-Source Deep Research)
+  - 6-stage deep research architecture: query decomposition, multi-source fan-out (`arXiv`, `DuckDuckGo`, `Wikipedia`, `Local PDF`), HTML boilerplate stripping, deterministic citation registry (`[1]`, `[2]`), evidence-grounded synthesis, and citation verification.
+  - Reference simulation in `applied-agent-systems/research-agent/` + Full standalone production system at **[tradertanmay/research-agent](https://github.com/tradertanmay/research-agent)**.
 - [ ] **A4 — Browser / Computer-Use Agent** (DOM Exploration, Tool Grounding & Vision Action Loops) *(Planned)*
 - [ ] **A5 — Long-Running Coding Agent** (Multi-File Refactoring, Test-Driven Verification & PR Stewardship) *(Planned)*
 
@@ -160,4 +162,4 @@ This roadmap tracks the development of **AI Agents: Zero → Hero**. The curricu
 - [x] `examples/coding_assistant/`: Minimal repo-investigation and patch-applying agent.
 - [x] `examples/self_improving_agent/`: Versioned self-improvement, candidate isolation, multi-dimensional promotion, and rollback.
 - [x] `examples/persistent_agent/`: Applied Capstone A2: Production Persistent GitHub Steward Agent with SQLite checkpointing and crash recovery.
-- [ ] `examples/research_assistant/`: Multi-source search, citation, and synthesis agent.
+- [x] `applied-agent-systems/research-agent/`: Applied Capstone A3: Multi-source deep research reference simulation + bridge to [`tradertanmay/research-agent`](https://github.com/tradertanmay/research-agent).
