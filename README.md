@@ -147,6 +147,9 @@ flowchart LR
 4. **Observe Again**: The environment output becomes a new observation fed back to the model.
 
 > **Key Rule**: The model chooses or requests an action; an **execution layer** performs it. In a from-scratch agent like the one in this course, that execution layer is our Python runtime. In hosted platforms, the provider may execute certain hosted tools on the application’s behalf.
+>
+> **Companion Engineering Series — Going Deeper Under the Hood**:
+> This repository teaches everything **above** the model call (control loops, tool execution, memory, context hygiene, evals, and safety). To master what happens **inside and underneath** the model call—GPU memory hierarchy, KV-cache mechanics, continuous batching, quantization, and production serving—check out **[LLM Inference at Scale](https://github.com/harshuljain13/llm-inference-at-scale)**.
 
 ---
 
